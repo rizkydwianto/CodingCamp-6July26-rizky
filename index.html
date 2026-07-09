@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense & Budget Visualizer</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Judul -->
+    <h1>Expense & Budget Visualizer</h1>
+
+    <!-- Total Balance -->
+    <div class="card balance-card">
+
+        <p class="title">TOTAL BALANCE</p>
+
+        <h2 id="balance">$0.00</h2>
+
+    </div>
+
+    <!-- Form -->
+    <div class="card">
+
+        <h3>Add Transaction</h3>
+
+        <form id="transactionForm">
+
+            <label>Item Name</label>
+
+            <input
+                type="text"
+                id="itemName"
+                placeholder="Enter item name"
+                required
+            >
+
+            <label>Amount</label>
+
+            <input
+                type="number"
+                id="amount"
+                placeholder="Enter amount"
+                required
+            >
+
+            <label>Category</label>
+
+            <select id="category" required>
+
+                <option value="">-- Select Category --</option>
+
+                <option value="Food">Food</option>
+
+                <option value="Transport">Transport</option>
+
+                <option value="Fun">Fun</option>
+
+            </select>
+
+            <button type="submit">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Transaction
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Bottom Content -->
+    <div class="bottom">
+
+        <!-- Transaction List -->
+        <div class="card">
+
+            <div class="card-header">
+
+                <h3>Transactions</h3>
+
+            </div>
+
+            <div
+                id="transactionList"
+                class="transaction-list">
+
+                <!-- Data transaksi muncul di sini -->
+
+            </div>
+
+        </div>
+
+        <!-- Chart -->
+        <div class="card">
+
+            <div class="card-header">
+
+                <h3>Spending by Category</h3>
+
+            </div>
+
+            <div class="chart-container">
+
+                <canvas id="expenseChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
